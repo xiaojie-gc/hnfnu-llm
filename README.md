@@ -1,7 +1,12 @@
 # hnfnu-llm
-把原始的AdvertiseGen数据转换为chatGLM3支持的格式：
+把原始的AdvertiseGen数据转换为chatGLM3支持的格式。
 
-{"conversations": [{"role": "user", "content": "类型#裙*裙长#半身裙"}, {"role": "assistant", "content": "这款百搭时尚的仙女半身裙，整体设计非常的飘逸随性，穿上之后每个女孩子都能瞬间变成小仙女啦。料子非常的轻盈，透气性也很好，穿到夏天也很舒适。"}]}
+使用：python prepare_data.py ```<input json file>``` ```<output json file>```
 
-使用：python prepare_data.py <input json file> <output json file>
+效果：
 
+```{"content": "类型#上衣*材质#牛仔布*颜色#白色*风格#简约*图案#刺绣*衣样式#外套*衣款式#破洞", "summary": "简约而不简单的牛仔外套，白色的衣身十分百搭。衣身多处有做旧破洞设计，打破单调乏味，增加一丝造型看点。衣身后背处有趣味刺绣装饰，丰富层次感，彰显别样时尚。"}```
+
+变成
+
+```{"conversations": [{"role": "user", "content": "类型#上衣*材质#牛仔布*颜色#白色*风格#简约*图案#刺绣*衣样式#外套*衣款式#破洞"}, {"role": "assistant", "content": "简约而不简单的牛仔外套，白色的衣身十分百搭。衣身多处有做旧破洞设计，打破单调乏味，增加一丝造型看点。衣身后背处有趣味刺绣装饰，丰富层次感，彰显别样时尚。"}]}```
